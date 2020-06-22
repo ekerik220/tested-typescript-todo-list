@@ -1,11 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import useTodoAdder from "./useTodoAdder";
 
 function TodoAdder() {
+  const { userInput, handleInputChange, addTodoItemToStore } = useTodoAdder();
+
   return (
-    <Container style={{ display: "flex" }}>
-      <TodoInput placeholder="Enter new to-do!" />
-      <AddButton>
+    <Container
+      onSubmit={(e) => {
+        e.preventDefault();
+        addTodoItemToStore(userInput);
+      }}
+    >
+      <TodoInput
+        placeholder="Enter new to-do!"
+        value={userInput}
+        onChange={handleInputChange}
+      />
+      <AddButton type="submit">
         <i className="fas fa-plus"></i>
       </AddButton>
     </Container>
@@ -14,7 +26,8 @@ function TodoAdder() {
 
 export default TodoAdder;
 
-const Container = styled.div`
+const Container = styled.form`
+  display: flex;
   position: absolute;
   transition: transform 0.2s;
 

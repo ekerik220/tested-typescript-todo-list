@@ -2,6 +2,12 @@ import React from "react";
 import { render } from "@testing-library/react";
 import TodoAdder from "./TodoAdder";
 
+jest.mock("./useTodoAdder", () => () => ({
+  userInput: "",
+  handleInputChange: jest.fn(),
+  addTodoItemToStore: jest.fn(),
+}));
+
 it("has placeholder text 'Enter new to-do!'", () => {
   const { getByPlaceholderText } = render(<TodoAdder />);
   const placeHolderText = getByPlaceholderText("Enter new to-do!");

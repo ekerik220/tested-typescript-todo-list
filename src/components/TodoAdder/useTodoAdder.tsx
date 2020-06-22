@@ -6,7 +6,9 @@ function useTodoAdder() {
   const dispatch = useDispatch();
   const [userInput, setUserInput] = useState("");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setUserInput(event.target.value);
   };
 

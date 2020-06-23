@@ -11,7 +11,7 @@ function App() {
         <Container justify="center">
           <TodoAdder />
         </Container>
-        <Container>
+        <Container justify="center">
           <TodoList />
         </Container>
       </PageLayout>

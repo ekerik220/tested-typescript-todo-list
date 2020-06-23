@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useTodoAdder from "./useTodoAdder";
+import { useTodoAdder } from "./useTodoAdder";
 
 function TodoAdder() {
   const { userInput, handleInputChange, addTodoItemToStore } = useTodoAdder();
@@ -11,6 +11,7 @@ function TodoAdder() {
         e.preventDefault();
         addTodoItemToStore(userInput);
       }}
+      data-testid="form"
     >
       <TodoInput
         placeholder="Enter new to-do!"

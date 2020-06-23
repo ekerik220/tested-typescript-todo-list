@@ -36,6 +36,8 @@ const GlobalStyle = createGlobalStyle`
 
 const PageLayout = styled.div`
   display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3em;
 `;
 
 const Container = styled.div<ContainerProps>`

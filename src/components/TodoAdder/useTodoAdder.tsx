@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodoItem } from "../../redux/slices/todoList";
 
-function useTodoAdder() {
+export function useTodoAdder() {
   const dispatch = useDispatch();
   const [userInput, setUserInput] = useState("");
 
@@ -21,5 +21,3 @@ function useTodoAdder() {
 
   return { userInput, handleInputChange, addTodoItemToStore };
 }
-
-export default useTodoAdder;

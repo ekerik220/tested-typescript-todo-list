@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import useTodoAdder from "./useTodoAdder";
+import { useTodoAdder } from "./useTodoAdder";
 import { renderHook, act } from "@testing-library/react-hooks";
 import { addTodoItem } from "../../redux/slices/todoList";
 

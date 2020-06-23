@@ -29,7 +29,6 @@ export default TodoAdder;
 
 const Container = styled.form`
   display: flex;
-  position: absolute;
   transition: transform 0.2s;
 
   &:focus-within {

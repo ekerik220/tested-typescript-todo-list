@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import TodoAdder from "../TodoAdder/TodoAdder";
+import TodoList from "../TodoList/TodoList";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
       <PageLayout>
         <Container justify="center">
           <TodoAdder />
+        </Container>
+        <Container>
+          <TodoList />
         </Container>
       </PageLayout>
     </React.Fragment>

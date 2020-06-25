@@ -44,4 +44,5 @@ const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: ${(props) => props.justify || "flex-start"};
   width: ${(props) => props.width || "100%"};
+  min-width: 0;
 `;

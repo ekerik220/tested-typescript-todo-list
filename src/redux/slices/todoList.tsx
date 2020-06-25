@@ -8,18 +8,14 @@ const todoList = createSlice({
       state.push(action.payload);
     },
     deleteTodoItem: (state: TodoItem[], action: { payload: TodoItem }) => {
-      const index = state.findIndex(
-        (todoItem) => todoItem.id === action.payload.id
-      );
+      const index = getTodoItemIndexFromList(action.payload, state);
       state.splice(index, 1);
     },
     toggleTodoItemDoneState: (
       state: TodoItem[],
       action: { payload: TodoItem }
     ) => {
-      const index = state.findIndex(
-        (todoItem) => todoItem.id === action.payload.id
-      );
+      const index = getTodoItemIndexFromList(action.payload, state);
       state[index].done = !state[index].done;
     },
   },
@@ -31,3 +27,10 @@ export const {
   toggleTodoItemDoneState,
 } = todoList.actions;
 export default todoList.reducer;
+
+const getTodoItemIndexFromList = (
+  todoItem: TodoItem,
+  list: TodoItem[]
+): number => {
+  return list.findIndex((ele) => ele.id === todoItem.id);
+};

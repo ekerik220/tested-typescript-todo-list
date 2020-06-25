@@ -9,7 +9,7 @@ const todoList = createSlice({
     },
     deleteTodoItem: (state: TodoItem[], action: { payload: TodoItem }) => {
       const index = state.findIndex(
-        (todoItem) => todoItem.task === action.payload.task
+        (todoItem) => todoItem.id === action.payload.id
       );
       state.splice(index, 1);
     },
@@ -18,7 +18,7 @@ const todoList = createSlice({
       action: { payload: TodoItem }
     ) => {
       const index = state.findIndex(
-        (todoItem) => todoItem.task === action.payload.task
+        (todoItem) => todoItem.id === action.payload.id
       );
       state[index].done = !state[index].done;
     },

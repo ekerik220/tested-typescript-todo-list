@@ -1,5 +1,5 @@
 type TodoItem = {
-  id: string;
+  id: string; // should be a uuid
   task: string;
   done: boolean;
 };

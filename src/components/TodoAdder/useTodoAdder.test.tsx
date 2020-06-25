@@ -1,7 +1,6 @@
 import { ChangeEvent } from "react";
 import { useTodoAdder } from "./useTodoAdder";
 import { renderHook, act } from "@testing-library/react-hooks";
-import { addTodoItem } from "../../redux/slices/todoList";
 
 const mockDispatch = jest.fn();
 jest.mock("react-redux", () => ({
@@ -26,13 +25,11 @@ describe("addTodoItemToStore", () => {
     jest.clearAllMocks();
   });
 
-  it("should dispatch addTodoItem action with TodoItem with task set to passed in task and done set to false", () => {
+  it("should call dispatch when passed in a task", () => {
     const { result } = renderHook(() => useTodoAdder());
     const task = "test task";
-    const todo = { task, done: false };
-
     act(() => result.current.addTodoItemToStore(task));
-    expect(mockDispatch).toHaveBeenCalledWith(addTodoItem(todo));
+    expect(mockDispatch).toHaveBeenCalled();
   });
 
   it("should not dispatch anything if passed in task is an empty string", () => {

@@ -18,6 +18,7 @@ export function useTodoAdder() {
       const todoItem = { task, done: false, id: uuidv4() };
       dispatch(addTodoItem(todoItem));
     }
+    setUserInput("");
   };
 
   return { userInput, handleInputChange, addTodoItemToStore };

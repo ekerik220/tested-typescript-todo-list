@@ -38,4 +38,11 @@ describe("addTodoItemToStore", () => {
     act(() => result.current.addTodoItemToStore(task));
     expect(mockDispatch).not.toHaveBeenCalled();
   });
+
+  it("should set userInput to blank string", () => {
+    const { result } = renderHook(() => useTodoAdder());
+    const task = "test task";
+    act(() => result.current.addTodoItemToStore(task));
+    expect(result.current.userInput).toBe("");
+  });
 });
